@@ -40,8 +40,8 @@ export default class CreateRoomPage extends Component {
 	handleRoomButtonPressed() {
 		const requestOptions = {
 			method: "POST",
-			// headers: { "Content-Type": "application/json" },
-			headers:{ accept: 'application/json'},
+			headers: { "Content-Type": "application/json" },
+			// headers:{ accept: 'application/json'},
 			body: JSON.stringify({
 				votes_to_skip: this.state.votesToSkip,
 				guest_can_pause: this.state.guestCanPause,
@@ -49,10 +49,7 @@ export default class CreateRoomPage extends Component {
 		};
 		fetch("/api/create-room", requestOptions)
 			.then((response) => response.json())
-			.then((data) => this.props.history.push("/room/" + data.code))
-			// // .then((response) => console.log(response.json()))
-			// .then((data) => console.log(data))
-
+			.then((data) => this.props.history.push(`/room/${data.code}`))
 	}
 
 	render() {
