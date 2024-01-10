@@ -40,7 +40,7 @@ export default class CreateRoomPage extends Component {
 	handleRoomButtonPressed() {
 		const requestOptions = {
 			method: "POST",
-			headers:{ accept: 'application/json'},
+			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
 				votes_to_skip: this.state.votesToSkip,
 				guest_can_pause: this.state.guestCanPause,
@@ -61,7 +61,7 @@ export default class CreateRoomPage extends Component {
 				</Grid>
 				<Grid item xs={12} align="center">
 					<FormControl component="fieldset">
-						<FormHelperText>
+						<FormHelperText align="center">
 							<span align="center">Guest Control of Playback State</span>
 						</FormHelperText>
 						<RadioGroup
@@ -96,7 +96,7 @@ export default class CreateRoomPage extends Component {
 								style: { textAlign: "center" },
 							}}
 						/>
-						<FormHelperText>
+						<FormHelperText align="center">
 							<span align="center">Votes Required To Skip Song</span>
 						</FormHelperText>
 					</FormControl>
